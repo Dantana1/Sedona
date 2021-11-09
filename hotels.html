@@ -1,106 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="page" lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Отели Седона</title>
 </head>
-<body>
-    <heder>
-        <nav>
-            <a>
-                <img src="/img/logo.svg" alt="Логотип">
-            </a>
-            <ul>
-                <li>
-                    <a href="#">Информация</a>
-                </li>
-                <li>
-                    <a href="#">Фото</a>
-                </li>
-                <li>
-                    <a href="#">Карта Штата</a>
-                </li>
-                <li>
-                    <a href="#">Гостиницы</a>
-                </li>
-            </ul>
-        </nav>
-    </heder>
-    <main>
-        <h1>Гостиницы</h1>
-        <section>
-            <h2>Фильтры</h2>
-        </section>
-        <section>
-            <p>Найдено:</p>
-            Сортировка:
-            <ul>
-                <li>По цене</li>
-                <li>По типу</li>
-                <li>По рейтингу</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Cписок гостиниц</h2>
-            <ul>
-                <li>
-                    <h3>Amara Resort & Spa</h3>
-                    <img src="/img/Hotels1.jpg">
-                    <p>Гостиница</p>
-                    <p>От 4000 Р.</p>
-                    <button type="button">Подробнее</button>
-                    <button type="button">Забронировать</button>
-                </li>
-                <li>
-                    <h3>Desert Quail Inn</h3>
-                    <img src="/img/Hotels2.jpg">
-                    <p>Мотель</p>
-                    <p>От 3000 Р.</p>
-                    <button type="button">Подробнее</button>
-                    <button type="button">Забронировать</button>
-                </li>
-                <li>
-                    <h3>Villas at Poco Diablo</h3>
-                    <img src="/img/Hotels3.jpg">
-                    <p>Апартаменты</p>
-                    <p>От 2000 Р.</p>
-                    <button type="button">Подробнее</button>
-                    <button type="button">Забронировать</button>
-                </li>
-            </ul>
-        </section>
-
-    </main>
-    <footer>
-        <section>
-            <h2>Контакты</h2>
-            <p>
-                #visitSEDONA
-                ТЕЛ: +7(495) 666-01-66
-            </p>
-        </section>
-        <section>
-            <h2>Cоциальные сети</h2>
-            <ul>
-                <li>
-                    <a href="#">Твиттер</a>
-                </li>
-                <li>
-                    <a href="#">Фейсбук</a>
-                </li>
-                <li>
-                    <a href="#">Ютуб</a>
-                </li>
-            </ul>
-        </section>
-        <p>
-            Website by
-            <a href="">
-                <img src="/img/logo-htmlacademy.svg" alt="">
-            </a>
+<body class="page__body">
+<header class="page__header">
+    <nav class="navigation">
+        <a class="navigation__logo" href="index.html">
+            <img class="navigation__logo-image" src="/img/logo.svg" alt="Логотип" width="138" height="70">
+        </a>
+        <ul class="navigation__list site-list">
+            <li class="site-list__item">
+                <a href="#">Информация</a>
+            </li>
+            <li class="site-list__item">
+                <a href="#">Фото</a>
+            </li>
+            <li class="site-list__item">
+                <a href="#">Карта Штата</a>
+            </li>
+            <li class="site-list__item">
+                <a>Гостиницы</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main  class="page-main">
+    <h1 class="visually-hidden">Гостиницы</h1>
+    <section class="filters">
+        <h2 class="visually-hidden">Фильтры</h2>
+    </section>
+    <section class="sorting">
+        <span class="sorting__result">Найдено:</span> 
+        <ul сlass="sorting__list">
+            <li class="sorting__item">Сортировка:</li>
+            <li class="sorting__item">По цене</li>
+            <li class="sorting__item">По типу</li>
+            <li class="sorting__item">По рейтингу</li>
+        </ul>
+    </section>
+    <section class="hotels">
+        <h2 class="visually-hidden">Cписок гостиниц</h2>
+        <ul class="hotels-list">
+            <li class="hotels-item">
+                <h3 class="hotels-item__title">Amara Resort & Spa</h3>
+                <img class="hotels-item__image" src="/img/Hotels1.jpg" alt="Гостиница" width="135" height="90">
+                <p class="hotels-item__price">
+                    Гостиница
+                    От 4000 Р.</p>
+                <a class="hotels-item__link" href="#">Подробнее</a>
+                <button class="hotels-item__button" type="button">Забронировать</button>
+            </li>
+            <li class="hotels-item"> 
+                <h3 class="hotels-item__title">Desert Quail Inn</h3>
+                <img class="hotels-tem__image" src="/img/Hotels2.jpg" alt="Мотель" width="135" height="90">
+                <p class="hotels-item__price">
+                    Мотель
+                    От 3000 Р.</p>
+                <a class="hotels-item__link" href="#">Подробнее</a>
+                <button class="hotels-item__button" type="button">Забронировать</button>
+            </li>
+            <li class="hotels-item">
+                <h3 class="hotels-item__title">Villas at Poco Diablo</h3>
+                <img class="hotels-item__image" src="/img/Hotels3.jpg" alt="Апартаменты" width="135" height="90">
+                <p class="hotels-item__price">
+                    Апартаменты
+                    От 2000 Р.
+                </p>
+                <a class="hotels-item__link" href="#">Подробнее</a>
+                <button class="hotels-item__button" type="button">Забронировать</button>
+            </li>
+        </ul>
+    </section>
+</main>
+<footer class="page-footer">
+    <section class="page-footer__contacts contacts">
+        <h2 class="contacts__title">Контакты</h2>
+        <p class="contacts__text">
+            #visitSEDONA
+            <a href="tel:+74956660166">ТЕЛ: +7(495) 666-01-66</a>
         </p>
-    </footer>
+    </section>
+    <section class="page-footer__social social">
+        <h2 class="social__title">Cоциальные сети</h2>
+        <ul class="social__list">
+            <li class="social__item">
+                <a class="social__link social__link--twitter" href="#">Твиттер</a>
+            </li>
+            <li class="social__item">
+                <a class="social__link social__link--facebook" href="#">Фейсбук</a>
+            </li>
+            <li class="social__item">
+                <a class="social__link social__link--youtube" href="#">Ютуб</a>
+            </li>
+        </ul>
+    </section>
+    <p class="page-footer__copyright copyright">
+        Website by
+        <a class="copyright__link" href="#">
+            <img class="copyright__image" src="/img/logo-htmlacademy.svg" alt="Логотип-HTMLAcademy" width="113.98" height="39.78">
+        </a>
+    </p>
+</footer>
 </body>
 </html>
