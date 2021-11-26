@@ -2,16 +2,14 @@
   font-family: 'PT Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('PT Sans'), local('PTSans') url('../fonts/ptsans.woff2') format('woff2'), /* Super Modern Browsers */
-  url('../fonts/ptsans.woff') format('woff'), /* Modern Browsers */
+  src: local('PT Sans'), local('PTSans'), url('../fonts/ptsans.woff2') format('woff2'), url('../fonts/ptsans.woff') format('woff');
 }
 
 @font-face {
   font-family: 'PT Sans';
   font-style: normal;
   font-weight: 700;
-  src: local('PT Sans Bold'), local('PTSan-Bold') url('../fonts/ptsansbold.woff2') format('woff2'), /* Super Modern Browsers */
-  url('../fonts/ptsansbold.woff') format('woff'), /* Modern Browsers */
+  src: local('PT Sans Bold'), local('PTSan-Bold'), url('../fonts/ptsansbold.woff2') format('woff2'), url('../fonts/ptsansbold.woff') format('woff');
 }
 
  :root {
@@ -24,6 +22,8 @@
   --special-dark-broun: #503E33;
   --special-blue: #669EC0;
   --special-dark-blue: #5496BD;
+  --opacity-white: rgba(255, 255, 255, 0.3);
+  --opacity-black: rgba(0, 0, 0, 0.3);
 }
 
 .visually-hidden {
@@ -66,13 +66,14 @@ img {
 }
 
 .navigation {
-  grid-template-rows: 56px;
   position: relative;
 }
 
 .navigation__logo {
-  justify-self: center;
   position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%)
 }
 
 .navigation__list {
@@ -101,7 +102,9 @@ img {
   color: var(--basic-blue);
 }
 
-.navigation__item a:active {}
+.navigation__item a:active {
+  color: var(--opacity-black);
+}
 
 .navigation__item a {
   display: block;
@@ -112,7 +115,18 @@ img {
 
 /*Advantages*/
 
-.advantages__banner {}
+.advantages__banner {
+  width: 1200px;
+  height: 506px;
+  text-align: center;
+  background-color: gray;
+  background: url(/img/background_photo.jpg) no-repeat;
+  margin-bottom: 43px;
+}
+
+.advantages__banner-image {
+  margin-top: 77px;
+}
 
 .advantages__title {
   font-size: 21px;
@@ -127,28 +141,51 @@ img {
   margin-bottom: 51px;
 }
 
-.advantages__item-text {
+.advantages__list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 400px;
-  height: 256px;
-  padding-top: 47px;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  margin-bottom: 58px;
+  padding: 0;
 }
 
-.advantages__item-text-icon {
-  padding-top: 160px;
+.advantages__item {
+  flex: 33%;
+}
+
+.advantages__item-with-image {
+  flex: 100%;
+  display: flex;
+  color: var(--basic-white);
+  background-color: var(--basic-blue);
+}
+
+.advantages__item:nth-child(5) {
+  flex-direction: row-reverse;
+}
+
+.advantages__item-with-image>.advantages__item-text {
+  flex: 1;
+}
+
+.advantages__item-text {
+  text-align: center;
+  padding: 0 49px;
 }
 
 .advantages__item-title {
+  text-align: center;
   font-size: 21px;
   line-height: 21px;
+  font-weight: bold;
   margin: 0;
+  margin-top: 47px;
   margin-bottom: 25px;
-  text-align: center;
 }
 
 .advantages__item-number {
+  display: block;
   font-size: 14px;
   line-height: 21px;
   margin-bottom: 23px;
@@ -159,71 +196,34 @@ img {
   line-height: 21px;
   text-align: center;
   margin: 0;
-  margin-left: 52px;
-  margin-right: 51px;
+  margin-bottom: 54px;
   padding: 0;
 }
 
-
-/*grid*/
-
-.advantages__list {
-  list-style: none;
-  display: grid;
-  grid-template-rows: 256px 330px 256px 256px;
-  grid-template-columns: repeat(3, 400px);
-  grid-template-areas: "item1 item1 item1" "item--housing  item--food item--souvenirs" "item2 item2 item2" "item3 item4 item5";
-  margin: 0;
-  padding: 0;
-  margin-bottom: 58px;
+.advantages__item-with-icon>.advantages__item-text {
+  margin-top: 160px;
 }
 
-.advantages__item {
-  box-sizing: border-box;
+.advantages__item-with-icon>.advantages__item-text>.advantages__item-description {
+  margin-bottom: 82px;
 }
 
-.advatnages__item1 {
-  grid-area: item1;
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--basic-blue);
-  color: var(--basic-white);
+.housing {
+  background: url(/img/icons/icon-1.svg) no-repeat 162px 60px;
 }
 
-.advatnages__item--housing {
-  grid-area: item--housing;
-  background: url(/img/icons/icon-1.svg) no-repeat;
+.food {
+  background: url(/img/icons/icon-3.svg) no-repeat 162px 61px;
 }
 
-.advatnages__item--food {
-  grid-area: item--food;
+.souvenirs {
+  background: url(/img/icons/icon-2.svg) no-repeat 168px 55px;
 }
 
-.advatnages__item--souvenirs {
-  grid-area: item--souvenirs;
-}
-
-.advatnages__item2 {
-  grid-area: item2;
-  display: flex;
-  flex-direction: row-reverse;
-  background-color: var(--basic-blue);
-  color: var(--basic-white);
-}
-
-.advatnages__item3 {
-  grid-area: item3;
-  background-color: #EEEEEE;
-}
-
-.advatnages__item4 {
-  grid-area: item4;
-  background-color: #EEEEEE;
-}
-
-.advatnages__item5 {
-  grid-area: item5;
-  background-color: #EEEEEE;
+.advantages__item:nth-child(6),
+.advantages__item:nth-child(7),
+.advantages__item:nth-child(8) {
+  background-color: var(--basic-grey);
 }
 
 
@@ -253,10 +253,12 @@ img {
 }
 
 .search__button:active {
+  color: var(--opacity-white);
   background-color: var(--special-dark-broun);
 }
 
 .search__button {
+  font-family: inherit;
   font-style: inherit;
   text-transform: uppercase;
   font-size: 21px;
@@ -269,8 +271,6 @@ img {
   background-color: var(--basic-broun);
 }
 
-.search__map {}
-
 
 /*footer*/
 
@@ -279,7 +279,8 @@ img {
   justify-content: space-around;
   align-items: center;
   height: 120px;
-  background-color: (255, 255, 255, 0.9);
+  margin-top: -120px;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .contacts {
@@ -287,16 +288,17 @@ img {
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
-}
-
-.contacts__text {
   font-size: 21px;
   line-height: 26px;
   font-weight: bold;
 }
 
-.contacts__text a {
+.contacts a {
   color: var(--basic-black)
+}
+
+.contacts__text {
+  margin-bottom: 9px;
 }
 
 .social__list {
@@ -316,8 +318,13 @@ img {
   background-color: var(--special-dark-blue);
 }
 
+.social__link:active path {
+  fill: var(--opacity-white);
+}
+
 .social__link {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   width: 46px;
@@ -329,7 +336,9 @@ img {
   fill: var(--basic-blue);
 }
 
-.copyright__link:active path {}
+.copyright__link:active path {
+  fill: var(--opacity-black);
+}
 
 .copyright {
   display: flex;
@@ -337,13 +346,14 @@ img {
   align-items: center;
   font-size: 14px;
   line-height: 26px;
-  width: 210px;
+  width: 199px;
 }
 
 
 /*form*/
 
 form {
+  display: none;
   outline: 5px solid blue;
   outline-offset: -5px;
 }
