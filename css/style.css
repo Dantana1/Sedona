@@ -22,6 +22,8 @@
   --special-dark-broun: #503E33;
   --special-blue: #669EC0;
   --special-dark-blue: #5496BD;
+  --special-dark-grey: #EBEBEB;
+  --special-border-grey: #E5E5E5;
   --opacity-white: rgba(255, 255, 255, 0.3);
   --opacity-black: rgba(0, 0, 0, 0.3);
 }
@@ -120,7 +122,9 @@ img {
   height: 506px;
   text-align: center;
   background-color: gray;
-  background: url(/img/background_photo.jpg) no-repeat;
+  background-image: url(/img/Shape.png), url(/img/background_photo.jpg);
+  background-position: bottom, top;
+  background-repeat: no-repeat;
   margin-bottom: 43px;
 }
 
@@ -200,6 +204,20 @@ img {
   padding: 0;
 }
 
+.advantages__item-image-box {
+  position: relative;
+  width: 66.6%;
+  overflow: hidden;
+}
+
+.advantages__item-image {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  object-fit: cover;
+}
+
 .advantages__item-with-icon>.advantages__item-text {
   margin-top: 160px;
 }
@@ -208,21 +226,19 @@ img {
   margin-bottom: 82px;
 }
 
-.housing {
+.advantages__item--housing {
   background: url(/img/icons/icon-1.svg) no-repeat 162px 60px;
 }
 
-.food {
+.advantages__item--food {
   background: url(/img/icons/icon-3.svg) no-repeat 162px 61px;
 }
 
-.souvenirs {
+.advantages__item--souvenirs {
   background: url(/img/icons/icon-2.svg) no-repeat 168px 55px;
 }
 
-.advantages__item:nth-child(6),
-.advantages__item:nth-child(7),
-.advantages__item:nth-child(8) {
+.advantages__item--bg-grey {
   background-color: var(--basic-grey);
 }
 
@@ -245,7 +261,9 @@ img {
 }
 
 .search__button-wrapper {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .search__button:hover {
@@ -264,7 +282,7 @@ img {
   font-size: 21px;
   line-height: 26px;
   font-weight: bold;
-  width: 586px;
+  min-width: 568px;
   height: 86px;
   border: none;
   color: var(--basic-white);
@@ -352,30 +370,143 @@ img {
 
 /*form*/
 
-form {
-  display: none;
-  outline: 5px solid blue;
-  outline-offset: -5px;
+.search-form-box{
+  width: 458px;
+  height: 285px;
+  padding: 55px;
+  background-color: var(--basic-white);
 }
 
-.search__form {
+.search-form {
+  font-family: inherit;
   font-size: 14px;
   line-height: 26px;
   font-weight: bold;
-  width: 531px;
-  height: 340px;
-  padding: 55px;
+  text-transform: uppercase;
 }
 
-.search__form button {
-  font-style: inherit;
-  text-transform: uppercase;
-  font-size: 21px;
-  line-height: 26px;
-  font-weight: bold;
+input {
+  outline: none;
+}
+
+.search-form__date-input {
+  width: 346px;
+  height: 38px;
+  border: 0;
+  background-color: var(--basic-grey);
+}
+
+.search-form__date-box::before {
+  content: '';
+  position: absolute;
+  width: 21px;
+  height: 23px;
+  background-image: url(../img/icons/calendar.svg);
+  background-repeat: no-repeat;
+  right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search-form__date-input:hover {
+  background-color: var(--special-dark-grey);
+}
+
+.search-form__date-input:active {
+  background-color: var(--basic-white);
+  outline: 2px solid var(--special-border-grey);
+  outline-offset: -2px;
+}
+
+.search-form__count-input {
+  width: 38px;
   border: none;
+  padding: 0;
+  margin: 0;
+  background-color: var(--basic-grey);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+}
+
+.search-form__date-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+
+.search-form__count-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 54px;
+}
+
+.search-form__count {
+  display: flex;
+  align-items: center;
+
+}
+
+.search-form__count-text--adult {
+  margin-right: 39px;
+}
+
+.search-form__count-text-children {
+  margin-right: 30px;
+}
+
+
+.search-form__count-buttons-box {
+  display: flex;
+  background-color: var(--basic-grey);
+}
+
+
+.search-form__count-button:hover svg{
+  fill: var(--basic-black);
+}
+
+.search-form__count-button:active svg{
+  fill: var(--basic-blue);
+}
+
+.search-form__count-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 0;
+  width: 38px;
+  height: 38px;
+  background-color: var(--basic-grey);
+}
+
+
+
+.search-form__button-find {
   width: 458px;
   height: 58px;
+  padding: 0;
+  font-family: inherit;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 26px;
+  text-transform: uppercase;
+  border: 0;
   color: var(--basic-white);
   background-color: var(--basic-blue);
+}
+
+.search-form__button-find:hover {
+  background-color: var(--special-dark-blue);
+}
+
+.search-form__button-find:active {
+  color: var(--opacity-white);
+  background-color: var(--special-dark-blue);
 }
